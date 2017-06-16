@@ -6,24 +6,25 @@ namespace BOL
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class tbl_category
+    public partial class tbl_Category
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tbl_category()
+        public tbl_Category()
         {
-            tbl_url = new HashSet<tbl_url>();
+            tbl_Url = new HashSet<tbl_Url>();
         }
 
         [Key]
-        public Guid CategoryId { get; set; }
+        public int CategoryId { get; set; }
 
+        [Required]
         [StringLength(50)]
         public string CategoryName { get; set; }
 
-        [StringLength(50)]
+        [Required]
         public string CategoryDesc { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbl_url> tbl_url { get; set; }
+        public virtual ICollection<tbl_Url> tbl_Url { get; set; }
     }
 }

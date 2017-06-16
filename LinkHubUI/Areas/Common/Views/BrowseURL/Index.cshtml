@@ -1,4 +1,5 @@
-﻿@model IEnumerable<BOL.tbl_url>
+﻿@using System.Data.SqlClient
+@model IEnumerable<BOL.tbl_Url>
 
 @{
     ViewBag.Title = "Index";
@@ -10,10 +11,10 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.tbl_category.CategoryName)
+            @Html.ActionLink("Url Title", "Index", new { SortOrder = (ViewBag.SortOrder == null ? "Asc" : (ViewBag.SortOrder == "Asc" ? "Desc" : "Asc")), SortBy = "Title", Page = (ViewBag.Page == null ? "1" : ViewBag.Page) })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.UrlTitle)
+            @Html.DisplayNameFor(model => model.tbl_Category.CategoryName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Url)
@@ -24,21 +25,38 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.tbl_category.CategoryName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UrlTitle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Url)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UrlDesc)
-        </td>
-       </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UrlTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tbl_Category.CategoryName)
+            </td>
+            <td>
+                <a target="_blank" href=@item.Url>@item.Url</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UrlDesc)
+            </td>
+        </tr>
+    }
+</table>
+@{
+    double TotalPage = ViewBag.TotalPages;
+
+    for (int i = 1; i <= TotalPage; i++)
+    {
+        if (ViewBag.Page == i)
+        {
+            <b> @Html.ActionLink(i + " ", "Index", new { SortOrder = (ViewBag.SortOrder == null ? "Asc" : (ViewBag.SortOrder == "Asc" ? "Desc" : "Asc")), SortBy = "Title", Page = i })</b>
+        }
+        else
+        {
+            @Html.ActionLink(i + " ", "Index", new { SortOrder = (ViewBag.SortOrder == null ? "Asc" : (ViewBag.SortOrder == "Asc" ? "Desc" : "Asc")), SortBy = "Title", Page = i })
+        }
+
+    }
 }
 
-</table>

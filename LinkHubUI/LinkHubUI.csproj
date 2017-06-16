@@ -205,7 +205,7 @@
       <Name>BLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\BOL\BOL.csproj">
-      <Project>{1e8044da-a988-45f5-8793-b509be433b50}</Project>
+      <Project>{6322f552-724a-43a1-b83a-8e09cf44b321}</Project>
       <Name>BOL</Name>
     </ProjectReference>
   </ItemGroup>

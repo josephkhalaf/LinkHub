@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1E8044DA-A988-45F5-8793-B509BE433B50}</ProjectGuid>
+    <ProjectGuid>{6322F552-724A-43A1-B83A-8E09CF44B321}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BOL</RootNamespace>
@@ -53,9 +53,9 @@
   <ItemGroup>
     <Compile Include="LinkHubModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="tbl_category.cs" />
-    <Compile Include="tbl_url.cs" />
-    <Compile Include="tbl_user.cs" />
+    <Compile Include="tbl_Category.cs" />
+    <Compile Include="tbl_Url.cs" />
+    <Compile Include="tbl_User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

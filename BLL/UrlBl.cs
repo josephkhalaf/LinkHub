@@ -13,17 +13,17 @@ namespace BLL
             objDb = new UrlDb();
         }
 
-        public IEnumerable<tbl_url> GetAll()
+        public IEnumerable<tbl_Url> GetAll()
         {
             return objDb.GetAll();
         }
 
-        public tbl_url GetById(int Id)
+        public tbl_Url GetById(int Id)
         {
             return objDb.GetById(Id);
         }
 
-        public void Insert(tbl_url url)
+        public void Insert(tbl_Url url)
         {
             objDb.Insert(url);
         }
@@ -33,7 +33,7 @@ namespace BLL
             objDb.Delete(Id);
         }
 
-        public void Update(tbl_url url)
+        public void Update(tbl_Url url)
         {
             objDb.Update(url);
         }

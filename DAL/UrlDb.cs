@@ -14,33 +14,33 @@ namespace DAL
             db = new LinkHubModel();
         }
 
-        public IEnumerable<tbl_url> GetAll()
+        public IEnumerable<tbl_Url> GetAll()
         {
-            return db.tbl_url.ToList();
+            return db.tbl_Url.ToList();
         }
 
-        public tbl_url GetById(int Id)
+        public tbl_Url GetById(int Id)
         {
-            return db.tbl_url.Find(Id);
+            return db.tbl_Url.Find(Id);
         }
 
-        public void Insert(tbl_url url)
+        public void Insert(tbl_Url url)
         {
-            db.tbl_url.Add(url);
+            db.tbl_Url.Add(url);
             Save();
         }
 
         public void Delete(int Id)
         {
-            tbl_url url = db.tbl_url.Find(Id);
+            tbl_Url url = db.tbl_Url.Find(Id);
             if (url != null)
             {
-                db.tbl_url.Remove(url);
+                db.tbl_Url.Remove(url);
                 Save();
             }
         }
 
-        public void Update(tbl_url url)
+        public void Update(tbl_Url url)
         {
             db.Entry(url).State = EntityState.Modified;
         }

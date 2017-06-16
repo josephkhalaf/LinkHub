@@ -9,15 +9,15 @@ namespace LinkHubUI.Areas.User.Controllers
         public ActionResult Index()
         {
             LinkHubModel db = new LinkHubModel();
-            ViewBag.CategoryId = new SelectList(db.tbl_category, "CategoryId", "CategoryName");
+            ViewBag.CategoryId = new SelectList(db.tbl_Category, "CategoryId", "CategoryName");
             return View();
         }
 
         [HttpPost]
-        public ActionResult Create(tbl_url obj)
+        public ActionResult Create(tbl_Url obj)
         {
             LinkHubModel db = new LinkHubModel();
-            ViewBag.CategoryId = new SelectList(db.tbl_category, "CategoryId", "CategoryName");
+            ViewBag.CategoryId = new SelectList(db.tbl_Category, "CategoryId", "CategoryName");
             return View();
         } 
     }
